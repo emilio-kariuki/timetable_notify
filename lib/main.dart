@@ -4,6 +4,7 @@ import 'package:hive/hive.dart';
 import 'package:todozz/model/todozz.dart';
 import 'package:todozz/screens/Home.dart';
 import "package:get/get.dart";
+import 'package:todozz/screens/splash.dart';
 
 void main() async {
   await WidgetsFlutterBinding.ensureInitialized();
@@ -11,7 +12,7 @@ void main() async {
   Hive.registerAdapter(TaskAdapter());
   await Hive.openBox<Task>('tasks');
   runApp(const GetMaterialApp(
-    home: Home(),
+    home: Splash(),
     debugShowCheckedModeBanner: false,
   ));
 }
